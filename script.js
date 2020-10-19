@@ -79,9 +79,12 @@
         else {
 
             const linnad = ["tln", "trt", "nrv", "prn"]
-            const hinnad = ["0,00", "2,50", "2,50", "3,00"]
+            const hinnad = [0, 2.5, 2.5, 3]
             const index = linnad.indexOf(linn.value)
-            e.innerHTML = hinnad[index] + " €";
+            const kingitus = document.getElementById("v1").checked ? 5 : 0
+            const kontakt = document.getElementById("v2").checked ? 1 : 0
+            const hind = kingitus + kontakt + hinnad[index]
+            e.innerHTML = hind + ",00 €";
 
         }
 
@@ -152,7 +155,3 @@ function GetMap() {
 
 
 }
-
-
-// https://dev.virtualearth.net/REST/v1/Locations?q=1000 Vin Scully Ave, Los Angeles,CA&key=YOUR_KEY_HERE
-
